@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: exampleRoot
+      MYSQL_DATABASE: InfoClients
+      MYSQL_USER: infoClientUserDb
+      MYSQL_PASSWORD: infoClientUserPwd*!
+  adminer:
+    image: adminer
+    restart: always
+    links:
+      - db
+    ports:
+      - 8080:8080
