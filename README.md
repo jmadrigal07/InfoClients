@@ -1,1 +1,1 @@
-# manage-customer-information
+# InfoClients project
