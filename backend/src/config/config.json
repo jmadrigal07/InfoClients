@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "infoClientUserDb",
+    "password": "infoClientUserPwd*!",
+    "database": "InfoClients",
+    "host": "db",
+    "dialect": "mysql",
+    "operatorsAliases": 1
+  },
+  "test": {
+    "username": "infoClientUserDb",
+    "password": "infoClientUserPwd*!",
+    "database": "InfoClients",
+    "host": "db",
+    "dialect": "mysql",
+    "operatorsAliases": 1
+  },
+  "production": {
+    "username": "infoClientUserDb",
+    "password": "infoClientUserPwd*!",
+    "database": "InfoClients",
+    "host": "db",
+    "dialect": "mysql",
+    "operatorsAliases": 1
+  }
+}
