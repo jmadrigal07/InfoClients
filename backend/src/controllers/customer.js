@@ -1,54 +1,35 @@
+import models from '../models';
+
 export default class customer {
     constructor() {}
 
-    customer(args) {
-        const response = {
-            id: 1,
-            name_c: 'Jorge Madrigal',
-            address: 'Cll 101 Nro 72A 4',
-            credit_limit: 12.2,
-            available_credit: 10.2,
-            visits_percentage: 10,
-            createdAt: '2019-09-12',
-            updatedAt: '2019-09-12',
-            city: 'Miami',
-            state: 'Florida',
-            country: 'USA',
-            visits: [{
-                id: 1,
-                net: 10.2,
-                visit_total: 12.0,
-                description: 'Description',
-                sales_representative: 'Sales 1',
-                createdAt: '2019-09-12',
-                updatedAt: '2019-09-12'
-            }]
-        }
-        return response;
+    async customer(p, args) {
+        const id = args.id;
+        const responde = await models.customers.findAll({
+            where: {
+                id: id
+            }
+        })
+        
+        return responde[0].dataValues;
     }
-    customers() {
-        const response = [{
-            id: 1,
-            name_c: 'Jorge Madrigal',
-            address: 'Cll 101 Nro 72A 4',
-            credit_limit: 12.2,
-            available_credit: 10.2,
-            visits_percentage: 10,
-            createdAt: '2019-09-12',
-            updatedAt: '2019-09-12',
-            city: 'Miami',
-            state: 'Florida',
-            country: 'USA',
-            visits: [{
-                id: 1,
-                net: 10.2,
-                visit_total: 12.0,
-                description: 'Description',
-                sales_representative: 'Sales 1',
-                createdAt: '2019-09-12',
-                updatedAt: '2019-09-12'
-            }]
-        }]
-        return response;
+    addCustomer(p, args) {
+        const { name, address, credit_limit, available_credit, visits_percentage, cityId } = args.input;
+
+        return models.customers.create({
+            name,
+            address,
+            credit_limit,
+            available_credit,
+            visits_percentage,
+            cityId
+        })
+        .then((c) => {
+            return c.dataValues;
+        })
+        .catch((err) => {
+            throw err;
+        })
     }
+
 }

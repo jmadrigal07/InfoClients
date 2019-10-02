@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from "body-parser";
 import http from 'http';
-import config from "./config";
+import config from "./conf";
 import server from './controllers/gql/graphql';
 
 const app = express();

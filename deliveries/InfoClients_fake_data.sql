@@ -8,7 +8,7 @@ INSERT INTO `cities` (`id`, `name`, `state_id`, `createdAt`, `updatedAt`) VALUES
 INSERT INTO `countries` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
 (1,	'USA',	'2019-10-01 00:12:36',	'2019-10-01 00:12:36');
 
-INSERT INTO `sales_representatives` (`id`, `name`, `email`, `createdAt`, `updatedAt`) VALUES
+INSERT INTO `salesRepresentatives` (`id`, `name`, `email`, `createdAt`, `updatedAt`) VALUES
 (1,	'Jorge Madrigal',	'sales1@gmail.com',	'2019-10-01 00:17:10',	'2019-10-01 00:17:10'),
 (2,	'Jose Madrigal',	'sales2@gmail.com',	'2019-10-01 00:17:40',	'2019-10-01 00:17:40');
 

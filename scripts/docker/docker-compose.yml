@@ -2,6 +2,7 @@ version: '3.1'
 services:
   db:
     image: mysql
+    container_name: database
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -10,6 +11,7 @@ services:
       MYSQL_USER: infoClientUserDb
       MYSQL_PASSWORD: infoClientUserPwd*!
   adminer:
+    container_name: admin_db
     image: adminer
     restart: always
     links:

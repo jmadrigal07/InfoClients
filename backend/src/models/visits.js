@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   visits.associate = function(models) {
     // associations can be defined here
-    visits.hasOne(models.sales_representative);
   };
   return visits;
 };

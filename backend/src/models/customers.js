@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     credit_limit: DataTypes.FLOAT,
     available_credit: DataTypes.FLOAT,
-    visits_percentage: DataTypes.FLOAT
+    visits_percentage: DataTypes.FLOAT,
+    cityId: DataTypes.INTEGER
   }, {});
   customers.associate = function(models) {
     customers.hasOne(models.cities);

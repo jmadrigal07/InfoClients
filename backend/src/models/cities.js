@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   cities.associate = function(models) {
     // associations can be defined here
-    customers.hasOne(models.states)
+    cities.hasOne(models.states)
   };
   return cities;
 };

@@ -1,7 +1,9 @@
 const configs = {
   db: {
-    host: '10.20.0.3',
-    password: 'example',
+    username: "infoClientUserDb",
+    password: "infoClientUserPwd*!",
+    database: "InfoClients",
+    host: "db"
   },
   web: {
     url: 'http://localhost',
