@@ -13,6 +13,14 @@ export default class customer {
         
         return responde[0].dataValues;
     }
+
+    async customers(p, args) {
+        const response = await models.customers.findAll({})
+        return response.map((customer) => {
+            return customer.dataValues
+        })
+    }
+
     addCustomer(p, args) {
         const { name, address, credit_limit, available_credit, visits_percentage, cityId } = args.input;
 

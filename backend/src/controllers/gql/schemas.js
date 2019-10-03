@@ -2,7 +2,11 @@ import { gql } from 'apollo-server-express';
 
 const typeDefs = gql`
     scalar JSON
+    scalar Date
+
     type Query {
+        customers: [CustomerInfo]
+        cities: [City]
         customer(id: Int!): CustomerInfo!
     }
     type Mutation {
@@ -16,12 +20,16 @@ const typeDefs = gql`
         credit_limit: Float
         available_credit: Float
         visits_percentage: Float
-        createdAt: String
-        updatedAt: String
+        createdAt: Date
+        updatedAt: Date
         city: String
         state: String
         country: String
-        visits: JSON
+        visits: [JSON]
+    }
+    type City {
+        id: Int
+        name: String
     }
     input Customer {
         name: String!
@@ -30,8 +38,8 @@ const typeDefs = gql`
         available_credit: Float!
         visits_percentage: Float!
         cityId: Int
-        createdAt: String
-        updatedAt: String
+        createdAt: Date
+        updatedAt: Date
     }
 `;
 
